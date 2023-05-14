@@ -6,7 +6,7 @@ Download the **chesire-cat-switch-user-role** folder into the **cheshire-cat/cor
 
 # Usage
 Ask the cat "Change role in **ROLE NAME**" (e.g Change role in PHP Developer).
-To reset de defautl Agent behavior ask the cat "**Change role in cat**"
+To reset de default Agent behavior ask the cat "**Change role in cat**"
 To reset episodic meomory ask the cat "**Reset your memory**"
 
 # Output
