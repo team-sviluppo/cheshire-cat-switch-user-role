@@ -1,0 +1,4 @@
+{
+  "name": "User role switch",
+  "description": "This plugin permit to change the default Agent behavior of the cat when asking somtehing to LLM. Is also possible to reset the episodic memory and caht history"
+}
