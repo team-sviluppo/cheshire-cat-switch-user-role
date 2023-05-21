@@ -1,12 +1,12 @@
 # What is this?
-This is a plugin (tool) for the [Cheshire Cat Project](https://github.com/pieroit/cheshire-cat), allowing to change the the default Agent behavior (the Cheshire Cat from Alice's adventures in wonderland) and reset the episodic memory. This plugin is useful when you want to give specific context to the Language Model.
+This is a plugin (tool) for the [Cheshire Cat Project](https://github.com/pieroit/cheshire-cat), allowing to change the default Agent behavior (the Cheshire Cat from Alice's adventures in wonderland) and reset the episodic memory. This plugin is useful when you want to give specific context to the Language Model.
 
 # Install
-Download the **chesire-cat-switch-user-role** folder into the **cheshire-cat/core/cat/plugins** one.
+Download the **cheshire-cat-switch-user-role** folder into the **cheshire-cat/core/cat/plugins** one.
 
 # Usage
 Ask the cat "Change role in **ROLE NAME**" (e.g Change role in PHP Developer).
-To reset de defautl Agent behavior ask the cat "**Change role in cat**"
+To reset de default Agent behavior ask the cat "**Change role in cat**"
 To reset episodic meomory ask the cat "**Reset your memory**"
 
 # Output
