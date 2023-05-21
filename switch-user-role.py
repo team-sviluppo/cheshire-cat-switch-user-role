@@ -1,5 +1,16 @@
 from cat.mad_hatter.decorators import tool, hook
 
+try:
+    from cat.plugins.cc_multilingual.multilingual import (
+        cc_multilingual_translate,
+    )
+except ModuleNotFoundError:
+
+    def cc_multilingual_translate(text):
+        return text
+
+    pass
+
 
 @hook(priority=1)
 def agent_prompt_prefix(cat):
@@ -39,21 +50,20 @@ def change_user_role(new_role: str, cat):
         new_role = "the Cheshire Cat from Alice's adventures in wonderland"
 
     cat.working_memory["current_role"] = new_role
-    answer = "Now i acting like " + new_role
+    answer = "Now i am a " + new_role
     return answer
 
 
 @tool(return_direct=True)
 def reset_memory(tool_input, cat):
-    """Use to reset the memory of the cat. The input is always none. Use this tool when user write Reset your memory. When you use this tool, do not use any other information from context or memory for the answer to the user question."""
-    key = "current_role"
-    if key in cat.working_memory:
+    """Use to reset the memory of the cat. The input is always none. Use this tool when user write Reset your memory or Delete your memory. When you use this tool, do not use any other information from context or memory for the answer to the user question."""
+    if "current_role" in cat.working_memory:
         current_role = cat.working_memory["current_role"]
     else:
         current_role = "cat"
+    answer = cc_multilingual_translate("Memory resetted")
     c = "episodic"
     cat.memory.vectors.vector_db.delete_collection(collection_name=c)
     cat.memory.vectors.episodic.create_collection_if_not_exists()
     cat.working_memory["current_role"] = current_role
-    answer = "Memory resetted"
     return answer
